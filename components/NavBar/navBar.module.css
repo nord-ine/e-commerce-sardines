@@ -1,0 +1,81 @@
+
+.header{
+	position: sticky;
+	top: 0px;
+	background-color: white;
+}
+
+
+.image{
+	width: 20%;
+
+}
+.table{
+	border-spacing: 10%;
+	font-family: fontPara;
+	font-size: 13;
+
+}
+.navigation{
+	width: 13%;
+	order-bottom-style: solid;
+	border-bottom-color: black;
+	Padding:0;
+	font-size:14;
+}
+
+
+.cellule{
+vertical-align: top;
+width: 20%;
+padding: 4%;
+
+
+}
+.a {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	margin: 5%;
+	display: block;
+	color: black;
+	text-align: center;
+	
+	text-decoration: none;
+}
+
+.a:hover {
+
+	color: black;
+	
+	border-image:  url("vague.png");
+	border-image-slice: 0% 0% 100%;
+	border-image-outset: 10px;
+	border-width: 15px;
+
+
+
+	border-top:0;
+	border-left:0;
+	border-right: 0;
+
+		
+	
+}
+.panier{
+	width: 6%;
+}
+.compte{
+	width: 6%;
+}
+.recherche{
+
+width: 30%;
+
+}
+.r{
+	background-color: #EDEDED;
+	border-radius: 8px;
+	font-size: 16;
+	width: 85%;
+}
+	

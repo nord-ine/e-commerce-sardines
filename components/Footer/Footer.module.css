@@ -1,0 +1,42 @@
+
+.footer{
+	background-color:#EDEDED;
+	margin-top:40px;
+	width:100%;
+
+}
+.table{
+	border-spacing: 10%;
+	font-family: fontPara;
+	font-size: 13;
+
+}
+
+.cellule{
+vertical-align: top;
+width: 20%;
+padding: 4%;
+
+
+}
+.titre{
+	font-weight: bold;
+	font-family: Arial;
+	font-size: 14;
+}
+
+.mdpaiemaent{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+
+.newsletter{
+
+	border-radius: 8px;
+	font-size: 14;
+	width: 85%;
+	font-family: fontPara;
+
+}

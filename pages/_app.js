@@ -1,9 +1,10 @@
 import '../styles/globals.css'
 import { ApolloProvider } from '@apollo/client';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ChakraProvider } from "@chakra-ui/react"
 
-
-import NavBar from '../components/NavBar'
+import NavBar from '../components/NavBar/NavBar'
+import Footer from '../components/Footer/Footer';
 
 const client = new ApolloClient({
   uri: 'http://localhost:8000/graphql/',
@@ -13,10 +14,14 @@ const client = new ApolloClient({
 function MyApp({ Component, pageProps }) {
   return(
     <>
-    <ApolloProvider client={client}>
-        <NavBar/>
-        <Component {...pageProps} />
-    </ApolloProvider>
+    <ChakraProvider>
+      <ApolloProvider client={client}>
+          <NavBar/>
+          <Component {...pageProps} />
+          <Footer/>
+      </ApolloProvider>
+    </ChakraProvider>
+ 
     </>
   )
       
