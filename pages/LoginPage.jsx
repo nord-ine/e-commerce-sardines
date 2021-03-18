@@ -6,6 +6,9 @@ import { Flex, Heading,Text,Input, FormControl,Button,
     FormHelperText,
     VStack, } from "@chakra-ui/react"
 
+
+    import Link from 'next/link'
+
 const LoginPage = () => {
     return (
       <Flex direction="row"  justifyContent="center" >
@@ -39,9 +42,12 @@ const LoginPage = () => {
        }}>
             <Heading as="h3" fontSize="md" my="4px"> NOUVEAU CLIENT</Heading>
             <Text mb="6px" w="70%">en créant un compte auprés de nos magasins, vous pourrez passer rapidement le processus de caisse, stocker plusieurs adresse d'expédition , afficher et suivre vos commandes dans votre compte et plus encore.</Text>
+            <Link href="/SignUpPage" >
             <Button colorScheme="gray" variant="solid" size="md">
                      Créer un compte
             </Button>
+            </Link>
+           
           </VStack>
       </Flex>
 

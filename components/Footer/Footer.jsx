@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './Footer.module.css'
 
 const Footer = () => {
+	
     return (
 <footer className={styles.footer}> 
 <table className={styles.table}>
@@ -34,13 +35,14 @@ const Footer = () => {
 	<td className={styles.cellule}> <div className={styles.titre}>Inscription à notre newsletter </div><br/>
 	Inscrivez-vous à notre newsletter at soyez les premiers à recevoir nos nouveautés et promotions.
 	<br/>
-	<table><td ><form action="" method="post">
+	<table>
+	<td ><form action="" method="post">
 	<input className={styles.newsletter} type="text" placeholder="Votre e-mail" />
 	</form>
 	</td>
     <td>
 	<form>
-	<input   TYPE="submit" NAME="OK" VALUE=" Ok "/>
+	<input  type="submit" name="OK" value=" Ok "/>
 	</form>
     </td>
     </table>
