@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import HistoryDiv from '../components/HistoryDiv/HistoryDiv'
+import ShopDiv from '../components/ShopDiv/ShopDiv'
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -10,7 +13,14 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-      <h3>HOME</h3>
+        <div>
+          <b>Livraison offert à partir de 126 € d’achat en France métropolitaine, Belgique, Hollande</b>
+        </div>
+        <div>
+          <img className={styles.img_homepage} src="/image_homepage.png"></img>
+        </div>
+        <HistoryDiv></HistoryDiv>
+        <ShopDiv></ShopDiv>
       </main>
     </div>
   )

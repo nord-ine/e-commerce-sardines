@@ -1,0 +1,35 @@
+.wrapper {
+    width: 100%;
+}
+
+.left_div {
+    height: 300px;
+    background-color: white;
+    width: 50%;
+    float: left;
+}
+
+.right_div {
+    height: 300px;
+    background-color: white;
+    width: 50%;
+    float: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.img_port {
+    height: 90%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text {
+    margin-top: 15%;
+}
+
+.h3 {
+    font-size: 30px;
+    margin-top: 5%;
+}
