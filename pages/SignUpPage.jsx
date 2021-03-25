@@ -12,11 +12,12 @@ const SignUpPage = () => {
 
     function submit(data){
         console.log(data)
-        console.log(errors)
+        //console.log(errors+"qdsq")
     }
 
     function validatePassword(value){
         //make the validation of the password a bit stricter (include number and a capital letter)
+        console.log(errors.password)
         if (value.length<8) return "entrez un mot de passe de plus de 6 charactères"
         else if  (value!==watch('confirmPassword')) return "rentrez deux mot de passe identique"
         else return true; 
@@ -33,29 +34,25 @@ const SignUpPage = () => {
             <Heading as="h3" fontSize="md" my="4px"> Créer un Compte</Heading>
             <Text mb="6px">Information personnelles</Text>
             <HStack>
-
             </HStack>
             <form align="center" onSubmit={handleSubmit(submit)}>
-            <FormControl id="email" isInvalid={errors.name} isRequired>
+            <FormControl id="email" isInvalid={errors.email} isRequired>
                 <FormLabel>addresse mail</FormLabel>
                 <Input type="email" name="email" placeholder="votre e-mail" ref={register({ required: true })}/>
                 <FormErrorMessage>
-                    {errors.name && errors.name.message}
+                   {errors.email && errors.email.message}
                 </FormErrorMessage>
             </FormControl>
-            <FormControl id="password" isInvalid={errors.name} isRequired >
+            <FormControl id="password" isInvalid={errors.password} isRequired >
                 <FormLabel>mot de passe</FormLabel>
                 <Input type="password" name="password"  placeholder="votre password" ref={register({ required: true ,validate:validatePassword})}/>
                 <FormErrorMessage>
-                    {errors.name && errors.name.message}
+              {errors.password && errors.password.message}
                 </FormErrorMessage>
             </FormControl>
-            <FormControl id="Confirm-password" isInvalid={errors.name} isRequired >
+            <FormControl id="Confirm-password"  isRequired >
                 <FormLabel> confirmez votre mot de passe</FormLabel>
                 <Input type="password" name="confirmPassword"  placeholder="votre password" ref={register({ required: true,validate:validatePassword })}/>
-                <FormErrorMessage>
-                    {errors.name && errors.name.message}
-                </FormErrorMessage>
             </FormControl>
             <Button type="submit" isLoading={formState.isSubmitting} leftIcon={<FiLogIn />} colorScheme="gray" variant="solid" size="md" mt="7px">
                      Submit
