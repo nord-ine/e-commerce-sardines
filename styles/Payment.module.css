@@ -1,0 +1,54 @@
+.detailsDiv {
+    width: 100%;
+}
+
+.personalDetails {
+    margin: 1em;
+    border-style: solid;
+    border-width: 3px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.paymentDetails {
+    margin: 1em;
+    border-style: solid;
+    border-width: 3px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.billingAdress {
+    margin: 1em;
+    border-style: solid;
+    border-width: 3px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.detailsTable {
+    width: 100%;
+}
+
+.detailsRows {
+    width: 100%;
+}
+
+.inputArea {
+    background-color: #EDEDED;
+    width: 100%;
+    padding: 4px;
+}
+
+.inputField {
+    background-color: #EDEDED;
+    width: 100%;
+}
+
+.inputField:focus {
+    outline: none;
+}
+
+.paymentButton {
+    margin-left: 50%;
+}

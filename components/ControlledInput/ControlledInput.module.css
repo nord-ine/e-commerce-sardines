@@ -1,0 +1,8 @@
+.inputField {
+    background-color: #EDEDED;
+    width: 100%;
+}
+
+.inputField:focus {
+    outline: none;
+}
