@@ -7,7 +7,7 @@ import NavBar from '../components/NavBar/NavBar'
 import Footer from '../components/Footer/Footer';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:8000/graphql/',
+  uri: process.env.API_URL,
   cache: new InMemoryCache()
 });
 
