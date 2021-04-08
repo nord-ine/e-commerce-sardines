@@ -1,20 +1,22 @@
-.detailsDiv {
+.wrapper{
     width: 100%;
 }
 
-.personalDetails {
-    margin: 1em;
-    border-style: solid;
-    border-width: 3px;
+.detailsDiv {
     width: 60%;
+    float: left;
     box-sizing: border-box;
 }
 
-.paymentDetails {
+.orderDiv {
+    width: 40%;
+    float: left;
+}
+
+.userDiv {
     margin: 1em;
     border-style: solid;
     border-width: 3px;
-    width: 60%;
     box-sizing: border-box;
 }
 
@@ -22,16 +24,17 @@
     margin: 1em;
     border-style: solid;
     border-width: 3px;
-    width: 60%;
     box-sizing: border-box;
 }
 
 .detailsTable {
     width: 100%;
+    box-sizing: border-box;
 }
 
 .detailsRows {
     width: 100%;
+    box-sizing: border-box;
 }
 
 .inputArea {
@@ -50,5 +53,13 @@
 }
 
 .paymentButton {
-    margin-left: 50%;
+    margin-left: 45%;
+    padding: 1em;
+}
+
+.paymentButton:hover {
+    background-color:#1AA604;
+    color: #EDEDED;
+    outline: solid #EDEDED 3px;
+    transition: background-color 0.5s, color 0.5s;
 }

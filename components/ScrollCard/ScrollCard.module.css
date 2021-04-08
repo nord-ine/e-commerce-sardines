@@ -1,0 +1,39 @@
+.mainDiv {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.picture {
+    width: 100%;
+}
+
+.productName {
+    font-weight: bold;
+    text-align: center;
+}
+
+.refCell {
+    width: 40%;
+}
+
+.priceCell {
+    width: 40%;
+    font-weight: bold;
+}
+
+.buyCell {
+    width: 20%;
+}
+
+.priceTag {
+    margin: auto;
+    text-align: center;
+}
+
+.buyIcon {
+    width: 100%;
+}
+
+.mainDiv:hover {
+    border-color: darkcyan;
+}

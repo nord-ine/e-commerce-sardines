@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
+import ProductScrollBar from '../components/ProductScrollBar/ProductScrollBar'
 import HistoryDiv from '../components/HistoryDiv/HistoryDiv'
 import ShopDiv from '../components/ShopDiv/ShopDiv'
 
@@ -19,6 +20,7 @@ export default function Home() {
         <div>
           <img className={styles.img_homepage} src="/image_homepage.png"></img>
         </div>
+        <ProductScrollBar></ProductScrollBar>
         <HistoryDiv></HistoryDiv>
         <ShopDiv></ShopDiv>
       </main>
