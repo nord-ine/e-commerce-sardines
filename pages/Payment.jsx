@@ -2,6 +2,8 @@ import React from 'react'
 import AdressForm from '../components/AdressForm/AdressForm'
 import PathnameDiv from '../components/PathnameDiv/PathnameDiv'
 import PaymentForm from '../components/PaymentForm/PaymentForm'
+import ControlledInput from '../components/ControlledInput/ControlledInput'
+import OrderRecap from '../components/OrderRecap/OrderRecap'
 
 import styles from '../styles/Payment.module.css'
 
@@ -15,7 +17,8 @@ class Payment extends React.Component{
             deliveryAdress :    {},
             billingAdress:      {},
             creditCard:         {},
-            billingStatus:      false
+            billingStatus:      false,
+            email_adress: ""
         };
     }
 
@@ -52,16 +55,35 @@ class Payment extends React.Component{
 
     render(){
         const displayBilling = this.state.billingStatus;
-        const handleChange = this.handleChange;
-        function Billing (props){
-            return;
-        }
 
         return (
-            <div>
+            <div style={{width:"100%",overflow:"hidden"}}>
                 <PathnameDiv pathname={["Accueil","Panier","Paiement"]}></PathnameDiv>
                 <div className={styles.detailsDiv}>
                     <form onSubmit={this.handleSubmit}>
+                        <div className={styles.userDiv}>
+                            <table className={styles.detailsTable}>
+                                <tr className={styles.detailsRows}>
+                                    <td colSpan={1} style={{width:"50%",boxSizing:"border-box",padding:"1em"}}>
+                                        <p style={{fontWeight:"bold",paddingLeft:"1em"}}> Profil </p>
+                                    </td>
+                                    <td colSpan={1} style={{width:"50%",boxSizing:"border-box",padding:"1em"}}>
+                                        <a style={{float:"right",paddingLeft:"1em"}} href="LoginPage"> Vous avez déjà une compte ?</a>
+                                    </td>
+                                </tr>
+                                <tr className={styles.detailsRows}>
+                                    <td colSpan={2} style={{width:"100%",boxSizing:"border-box",padding:"1em"}}>
+                                        <label>
+                                            <p className={styles.inputArea}>
+                                                Adresse e-mail
+                                                <br></br>
+                                                <ControlledInput name="email_adress" type ="text" handleChange={this.handleChange}></ControlledInput>
+                                            </p>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                         <AdressForm name="deliveryAdress" handleChange={this.handleChange} title="Adresse de livraison"></AdressForm>
                         <PaymentForm name="creditCard" handleChange={this.handleChange}></PaymentForm>
                         <div className={styles.billingAdress}>
@@ -89,10 +111,13 @@ class Payment extends React.Component{
                         <div className={styles.billingDiv}>
                             {displayBilling ? <AdressForm name="billingAdress" handleChange={this.handleChange} title="Adresse de facturation"></AdressForm> : null}
                         </div>
-                        <div style={{width:"60%"}}>
+                        <div>
                             <input className={styles.paymentButton} type="submit" value="Payer" />
                         </div>
                     </form>
+                </div>
+                <div className={styles.orderDiv}>
+                    <OrderRecap></OrderRecap>
                 </div>
             </div>
         )
