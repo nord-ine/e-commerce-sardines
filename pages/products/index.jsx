@@ -23,7 +23,7 @@ const getProductsQuery = gql`
                      value
                     }
                  }
-   
+
         }
    }
 }
