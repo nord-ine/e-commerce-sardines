@@ -5,11 +5,20 @@ import { Flex, Heading,Text,Input, FormControl,Button,
     FormErrorMessage,
     FormHelperText,
     VStack, } from "@chakra-ui/react"
-
+    import { useForm } from "react-hook-form";
 
     import Link from 'next/link'
 
+
+
 const LoginPage = () => {
+
+  const { handleSubmit, errors, register, formState,watch } = useForm();
+
+  function submit(Submiteddata){
+    console.log(Submiteddata)
+    console.log("submting")
+  }
     return (
       <Flex direction="row"  justifyContent="center" >
           <VStack direction="column" align="center" spacing="4px" w="50%" p="5px" m="5px" borderWidth="2px" borderRadius="lg"  overflow="hidden" boxShadow="sm" _hover={{
@@ -19,17 +28,16 @@ const LoginPage = () => {
         borderColor:"cyan.100"
        }}>
             <Heading as="h3" fontSize="md" my="4px"> DEJA CLIENT</Heading>
-            <Text mb="6px">si vous avez un compte  , connectez vous</Text>
-            <form align="center">
-            <FormControl id="email" isRequired>
+            <form align="center" onSubmit={handleSubmit(submit)}>
+            <FormControl id="email" isInvalid={errors.email} isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" placeholder="votre e-mail"/>
+                <Input type="email" name="email" placeholder="votre e-mail" ref={register({ required: true})}/>
             </FormControl>
-            <FormControl id="password" isRequired >
+            <FormControl id="password" isRequired>
                 <FormLabel>mot de passe</FormLabel>
-                <Input type="password"  placeholder="votre password"/>
+                <Input type="password" name="password"  placeholder="votre password" ref={register({required: true})}/>
             </FormControl>
-            <Button leftIcon={<FiLogIn />} colorScheme="gray" variant="solid" size="md" mt="7px">
+            <Button leftIcon={<FiLogIn />} colorScheme="gray" variant="solid" size="md" mt="7px" type="submit" isLoading={formState.isSubmitting}>
                      connectez vous
             </Button>
             </form>
@@ -43,7 +51,7 @@ const LoginPage = () => {
             <Heading as="h3" fontSize="md" my="4px"> NOUVEAU CLIENT</Heading>
             <Text mb="6px" w="70%">en créant un compte auprés de nos magasins, vous pourrez passer rapidement le processus de caisse, stocker plusieurs adresse d'expédition , afficher et suivre vos commandes dans votre compte et plus encore.</Text>
             <Link href="/SignUpPage" >
-            <Button colorScheme="gray" variant="solid" size="md">
+            <Button colorScheme="gray" variant="solid" size="md"  >
                      Créer un compte
             </Button>
             </Link>

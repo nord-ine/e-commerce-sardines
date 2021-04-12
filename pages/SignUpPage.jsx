@@ -6,19 +6,58 @@ import { Center,VStack,Heading,Text,Input, FormControl,Button,
 import {FiLogIn} from 'react-icons/fi'
 import React from 'react'
 import { useForm } from "react-hook-form";
+import { gql, useMutation } from '@apollo/client';
+
+const SIGN_UP = gql`
+mutation (
+    $email:String!,
+    $password:String!
+  ) {
+    accountRegister(
+      input: { email: $email, password: $password }
+    ) {
+      accountErrors {
+        field
+        code
+      }
+      user {
+        email
+        isActive
+      }
+    }
+  }`;
 
 const SignUpPage = () => {
     const { handleSubmit, errors, register, formState,watch } = useForm();
 
-    function submit(data){
-        console.log(data)
-        //console.log(errors+"qdsq")
+    const [signUp] = useMutation(SIGN_UP,
+        {ignoreResults:false,
+        onCompleted:(data)=>checkMutation(data)
+    });
+
+    function submit(Submiteddata){
+        console.log(Submiteddata)
+        signUp({ variables:{
+            email: Submiteddata.email,
+            password: Submiteddata.password 
+        }})  
+    }
+    function checkMutation(returnedData){
+        console.log(returnedData.accountRegister)
+        
+        if(returnedData.accountRegister.user!=null){
+            
+        }
+        else if(returnedData.accountRegister.user==null){
+            
+        }
     }
 
+ 
     function validatePassword(value){
         //make the validation of the password a bit stricter (include number and a capital letter)
-        console.log(errors.password)
-        if (value.length<8) return "entrez un mot de passe de plus de 6 charactères"
+        //console.log(errors.password)
+        if (value.length<8) return "entrez un mot de passe de plus de 8 charactères"
         else if  (value!==watch('confirmPassword')) return "rentrez deux mot de passe identique"
         else return true; 
     }
