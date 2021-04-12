@@ -1,0 +1,44 @@
+.title {
+    margin: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.addButtonDiv {
+    margin: 1em;
+}
+
+.addButton {
+    width: 100%;
+    display: block;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #E5E5E5;
+    font-weight: bold;
+    background-color: #E5E5E5;
+    box-sizing: border-box;
+}
+
+.addButton:hover {
+    border-color: black;
+}
+
+.adressDiv {
+    margin: 1em;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #E5E5E5;
+    box-sizing: border-box;
+}
+
+.adressButton {
+    width: 100%;
+    display: block;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.adressButton:hover {
+    background-color: #E5E5E5;
+}

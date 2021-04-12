@@ -22,7 +22,7 @@ class Profile extends React.Component{
                 <div className={styles.settingsDiv}>
                     <p style={{fontSize:"2em"}}> Paramètres du compte </p>
                     <div style={{marginTop:"2em",marginBottom:"2em"}}>
-                        <a href="#" className={styles.adressLink}>
+                        <a href="\Adress" className={styles.adressLink}>
                             <img src='\adress.png' className={styles.adressPicture}></img>
                             <p> Modifier les adresses</p>
                         </a>
