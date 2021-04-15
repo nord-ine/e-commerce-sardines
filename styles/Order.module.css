@@ -1,0 +1,33 @@
+.title {
+    margin: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.subtitle {
+    margin: 2em;
+    font-size: 1em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.productDiv {
+    margin: 1em;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #E5E5E5;
+    box-sizing: border-box;
+}
+
+.detailsDiv {
+    margin: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+.details {
+    font-weight: bold;
+    text-align: center;
+}

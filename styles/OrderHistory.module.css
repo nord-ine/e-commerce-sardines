@@ -1,0 +1,25 @@
+.title {
+    margin: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.orderDiv {
+    margin: 1em;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #E5E5E5;
+    box-sizing: border-box;
+}
+
+.orderButton {
+    width: 100%;
+    display: block;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.orderButton:hover {
+    background-color: #E5E5E5;
+}

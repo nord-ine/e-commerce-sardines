@@ -16,7 +16,7 @@ class Profile extends React.Component{
                 <div className={styles.orderDiv}>
                     <p style={{fontSize:"2em"}}> Mes commandes</p>
                     <div style={{marginTop:"2em",marginBottom:"2em"}}>
-                        <a href="#" className={styles.orderLink}> Tout voir </a>
+                        <a href="\OrderHistory" className={styles.orderLink}> Tout voir </a>
                     </div>
                 </div>
                 <div className={styles.settingsDiv}>
