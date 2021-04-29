@@ -2,7 +2,7 @@ const { default: next } = require("next");
 import React from 'react'
 import { useQuery, gql } from '@apollo/client';
 import ProductCard from '../../components/ProductCard'
-import { Flex, HStack, VStack,Text,Button,Center, StackDivider } from "@chakra-ui/react"
+import { Flex,Stack, HStack, VStack,Text,Button,Center, StackDivider,Skeleton } from "@chakra-ui/react"
 
 
 const getProductsQuery = gql`
@@ -38,7 +38,11 @@ const Products = ()  => {
 
     const { loading, error, data } = useQuery(getProductsQuery);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <Stack>
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+        <Skeleton height="20px" />
+    </Stack>;
     if (error) return <p>Error :(</p>;
   
 
@@ -70,25 +74,7 @@ const Products = ()  => {
     // console.log(productObjects)
     return (
         <>
-            <HStack bg="white.50" h="100%" divider={<StackDivider borderColor="purple.200"/>}>
-                <Center  p={6} border="1px" borderColor="gray.200" borderRadius="md" boxShadow="xs" bg="blue.100" m="40px">
-                    <Flex direction="column" alignItems="center">
-                        <Text as="h3" fontSize="md" textAlign="center">the filter component goes here</Text>
-                         <Button
-                          colorScheme="teal" 
-                          w="50%"
-                          _hover={
-                              {
-                                  backgroundColor:"blue.200",
-                                  color:"red.500"
-                              }
-                            }
-                          >
-                             click
-                        </Button>
-                    </Flex>
-                      
-                </Center>  
+            <HStack bg="white.50" h="100%" divider={<StackDivider borderColor="purple.200"/>}>  
             <VStack spacing="20px">
                 {productObjects.map(productObject=><ProductCard key={productObject.id} product={productObject}/>)}
             </VStack>
