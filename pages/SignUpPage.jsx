@@ -7,6 +7,8 @@ import {FiLogIn} from 'react-icons/fi'
 import React from 'react'
 import { useForm } from "react-hook-form";
 import { gql, useMutation } from '@apollo/client';
+import { useRouter } from 'next/router';
+import {useState} from 'react';
 
 const SIGN_UP = gql`
 mutation (
@@ -28,28 +30,35 @@ mutation (
   }`;
 
 const SignUpPage = () => {
+    const [signUpError, setsignUpError] = useState("");
     const { handleSubmit, errors, register, formState,watch } = useForm();
-
+    const router = useRouter()
     const [signUp] = useMutation(SIGN_UP,
         {ignoreResults:false,
         onCompleted:(data)=>checkMutation(data)
     });
 
     function submit(Submiteddata){
-        console.log(Submiteddata)
+        //console.log(Submiteddata)
+
+        console.log(errors);
         signUp({ variables:{
             email: Submiteddata.email,
             password: Submiteddata.password 
         }})  
     }
     function checkMutation(returnedData){
-        console.log(returnedData.accountRegister)
+       // console.log(returnedData.accountRegister)
         
         if(returnedData.accountRegister.user!=null){
-            
+            router.push('/RedirectPageAfterSignUp');
+            setsignUpError("");
         }
         else if(returnedData.accountRegister.user==null){
+          setsignUpError("compte déja existant");
+            //console.log(signUpError);
             
+
         }
     }
 
@@ -58,7 +67,7 @@ const SignUpPage = () => {
         //make the validation of the password a bit stricter (include number and a capital letter)
         //console.log(errors.password)
         if (value.length<8) return "entrez un mot de passe de plus de 8 charactères"
-        else if  (value!==watch('confirmPassword')) return "rentrez deux mot de passe identique"
+        else if  (value!==watch('confirmPassword')) return "les deux mot de passe ne sont pas identique"
         else return true; 
     }
     
@@ -72,6 +81,7 @@ const SignUpPage = () => {
        }}>
             <Heading as="h3" fontSize="md" my="4px"> Créer un Compte</Heading>
             <Text mb="6px">Information personnelles</Text>
+            <Text color="red">{signUpError}</Text>
             <HStack>
             </HStack>
             <form align="center" onSubmit={handleSubmit(submit)}>
