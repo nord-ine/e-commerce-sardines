@@ -21,7 +21,7 @@ const authLink = setContext((_, { headers }) => {
   if (typeof window !== 'undefined')
   {
      tokenObject = JSON.parse(localStorage.getItem("token"));
-     const token = tokenObject['token'];
+     token = tokenObject? tokenObject['token']:"";
      console.log("in graphql machin  ::  ");
       console.log(token)
   }
