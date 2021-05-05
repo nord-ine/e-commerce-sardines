@@ -29,7 +29,7 @@ const Profile = ()=>
     return(
         <div className={styles.mainDiv}>
             <p className={styles.title}> Mon compte </p>
-            <p className={styles.personalMsg}> Bienvenue   {tokenObject['user']['email']  } </p>
+            <p className={styles.personalMsg}> Bienvenue   {tokenObject && tokenObject['user']['email']  } </p>
             <hr></hr>
             <div className={styles.orderDiv}>
                 <p style={{fontSize:"2em"}}> Mes commandes</p>
