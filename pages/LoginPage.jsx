@@ -63,7 +63,7 @@ const LoginPage = () => {
      else{
        setloginError(false);
        const tokenObject = JSON.stringify(returnedData.tokenCreate)
-       localStorage.setItem("token",tokenObject);
+       if (typeof window !== 'undefined') localStorage.setItem("token",tokenObject);
        router.push("/Profile");
      }
   }
