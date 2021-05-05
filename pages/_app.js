@@ -17,13 +17,15 @@ const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
 
   let tokenObject ;
+  let token
   if (typeof window !== 'undefined')
   {
      tokenObject = JSON.parse(localStorage.getItem("token"));
+     const token = tokenObject['token'];
+     console.log("in graphql machin  ::  ");
+      console.log(token)
   }
-  const token = tokenObject['token'];
-  console.log("in graphql machin  ::  ");
-  console.log(token)
+  
   // return the headers to the context so httpLink can read them
   return {
     headers: {
