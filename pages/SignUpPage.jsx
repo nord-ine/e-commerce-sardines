@@ -38,11 +38,11 @@ const SignUpPage = () => {
         onCompleted:(data)=>checkMutation(data)
     });
 
-    function submit(Submiteddata){
+    async function submit(Submiteddata){
         //console.log(Submiteddata)
 
         console.log(errors);
-        signUp({ variables:{
+        await signUp({ variables:{
             email: Submiteddata.email,
             password: Submiteddata.password 
         }})  
