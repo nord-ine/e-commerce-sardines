@@ -20,7 +20,7 @@ export default function Home() {
         <div>
           <img className={styles.img_homepage} src="/image_homepage.png"></img>
         </div>
-        <ProductScrollBar></ProductScrollBar>
+        {/* <ProductScrollBar></ProductScrollBar> */}
         <HistoryDiv></HistoryDiv>
         <ShopDiv></ShopDiv>
       </main>

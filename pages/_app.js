@@ -3,9 +3,11 @@ import { ApolloProvider } from '@apollo/client';
 import { ApolloClient,createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { ChakraProvider } from "@chakra-ui/react"
+import {useState} from 'react';
 
 import NavBar from '../components/NavBar/NavBar'
 import Footer from '../components/Footer/Footer';
+import ProductsContext from '../Functions/ProductsContext'; 
 
 const httpLink  = new createHttpLink({
   uri: process.env.API_URL,
@@ -32,13 +34,17 @@ const client = new ApolloClient({
 });
 
 function MyApp({ Component, pageProps }) {
+
+  const [productsList, setProductsList] = useState([])
   return(
     <>
     <ChakraProvider>
       <ApolloProvider client={client}>
+      <ProductsContext.Provider value={{productsList,setProductsList}} >
           <NavBar/>
           <Component {...pageProps} />
           <Footer/>
+      </ProductsContext.Provider>
       </ApolloProvider>
     </ChakraProvider>
  

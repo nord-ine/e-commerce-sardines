@@ -97,7 +97,7 @@ const MenuLinks = ({ isOpen }) => {
               icon={<RiAccountCircleLine />}
           />
           </Link>
-        <Link href="cart" as="/">
+        <Link href="/ProductCartPage" as="ProductsCartPage">
           <IconButton
               variant="ghost"
               aria-label="carticon"
