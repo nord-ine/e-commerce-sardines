@@ -15,7 +15,12 @@ const httpLink  = new createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  if (typeof window !== 'undefined') const tokenObject = JSON.parse(localStorage.getItem("token"));
+
+  let tokenObject ;
+  if (typeof window !== 'undefined')
+  {
+     tokenObject = JSON.parse(localStorage.getItem("token"));
+  }
   const token = tokenObject['token'];
   console.log("in graphql machin  ::  ");
   console.log(token)

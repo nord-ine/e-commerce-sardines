@@ -17,7 +17,10 @@ const USER = gql`
 const Profile = ()=>
 
 {
-    if (typeof window !== 'undefined') const tokenObject = JSON.parse(localStorage.getItem("token"))
+    let tokenObject;
+    if (typeof window !== 'undefined') {
+        tokenObject = JSON.parse(localStorage.getItem("token"))
+    }
     const { loading, error, data } = useQuery(USER);
 
     
