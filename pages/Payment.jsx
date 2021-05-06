@@ -8,6 +8,8 @@ import {useContext,useEffect,useState} from 'react';
 import ProductsContext from '../Functions/ProductsContext';
 import styles from '../styles/Payment.module.css'
 
+
+
 class Payment extends React.Component{
     constructor(props){
         super(props);
