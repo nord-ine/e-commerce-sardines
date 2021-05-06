@@ -38,7 +38,7 @@ const ProductCard = ({product}) => {
         borderColor:"cyan.100"
        }}>
         <Container maxW="sm" maxH="sm" centerContent>
-        {/* <Image src={product.image.url} alt={product.image.alt}  boxSize="90%" objectFit="contain" p="10px"/> */}
+        <Image src={product.image.url} alt={product.image.alt}  boxSize="90%" objectFit="contain" p="10px"/>
         </Container>
         <Flex  direction="column" alignItems="right" w="80%" p="10px">
             <Heading as="h3" size="md" color="green.600" my="10px">{product.name}</Heading>

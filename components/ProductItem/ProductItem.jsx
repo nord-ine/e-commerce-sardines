@@ -4,7 +4,7 @@ import { Center, Heading, HStack,Image,
     NumberInputStepper,
     NumberIncrementStepper,
     NumberDecrementStepper,
-    VStack,Tag,TagLabel,Button} from '@chakra-ui/react'
+    VStack,Tag,TagLabel,Button, Text} from '@chakra-ui/react'
 import React from 'react'
 import {AiFillDelete} from 'react-icons/ai'
 import {useContext,useEffect} from 'react';
@@ -27,7 +27,7 @@ const ProductItem = ({product}) => {
     }
     return (
         <VStack marginBottom="30px" color="green.600">
-            <Heading as="h5">{product.name}</Heading>
+            <Text as="h5">{product.name}</Text>
             <HStack>
                 <Image src={product.image.url} alt={product.image.alt}  boxSize="30%" objectFit="contain" p="10px"/>
                 <NumberInput
