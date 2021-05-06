@@ -5,7 +5,7 @@ import styles from './HistoryDiv.module.css'
 const HistoryDiv = () => {
     return (
         <div className={styles.wrapper}>
-            <Link  href="History">
+            <Link  href="/History">
             <a>
                 <div className={styles.left_div}>
                     <img className={styles.img_port} src="/image_port.png"></img>

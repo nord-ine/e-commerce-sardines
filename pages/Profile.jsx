@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
-
+import {Button} from '@chakra-ui/react';
 import styles from '../styles/Profile.module.css'
 import { gql, useMutation,useQuery } from '@apollo/client';
 
+import { useRouter } from 'next/router';
 
 const USER = gql`
 {
@@ -22,14 +23,23 @@ const Profile = ()=>
         tokenObject = JSON.parse(localStorage.getItem("token"))
     }
     const { loading, error, data } = useQuery(USER);
-
+    const router = useRouter();
+    function signOut(){
+        if (typeof window !== 'undefined') {
+          localStorage.removeItem("token");
+        }
+        router.push("/")
+    }
     
     if(!loading) console.log(data)
     console.log(tokenObject);
     return(
         <div className={styles.mainDiv}>
             <p className={styles.title}> Mon compte </p>
+            <div style={{display:"flex",flexDirection:"row",justifyContent:"space-between"}}>
             <p className={styles.personalMsg}> Bienvenue   {tokenObject && tokenObject['user']['email']  } </p>
+            <Button onClick={signOut} colorScheme="gray" variant="solid">déconnecter</Button>
+            </div>
             <hr></hr>
             <div className={styles.orderDiv}>
                 <p style={{fontSize:"2em"}}> Mes commandes</p>

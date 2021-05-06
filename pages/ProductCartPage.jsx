@@ -30,9 +30,13 @@ const ProductCartPage = () => {
         return sum;
     }
 
+    function validateCart(){
+
+    }
+
     return (
         <VStack >
-            <Heading as="h2" marginBottom="50px">votre liste de produits </Heading>
+            <Heading as="h2" marginBottom="50px">votre Panier </Heading>
             <VStack >
                 {productsList.map((product)=><ProductItem key={product.id} product={product}/>)}
             </VStack>
@@ -40,8 +44,7 @@ const ProductCartPage = () => {
                 <StatLabel>Total</StatLabel>
                 <StatNumber>{total} €</StatNumber>
             </Stat>
-            <Button  colorScheme="teal" variant="solid">valider le panier</Button>
-
+            <Button onClick={validateCart}  colorScheme="teal" variant="solid">valider le panier</Button>
         </VStack>
         
     )

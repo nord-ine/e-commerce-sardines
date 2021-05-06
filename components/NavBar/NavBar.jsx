@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './navBar.module.css'
 import Link from 'next/link'
 import { Box, Flex, Input, Button, Stack,IconButton } from "@chakra-ui/react";
+import { useRouter } from 'next/router';
 
 import { RiAccountCircleLine ,} from "react-icons/ri";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -9,7 +10,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import Logo from "./Logo.jsx";
 
 const NavBar = (props) => {
-  
+  const router = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -65,6 +66,7 @@ const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
 };
 
 const MenuLinks = ({ isOpen }) => {
+  const router = useRouter();
     const [searchValue, setSearchValue] = React.useState("")
     const handleChangeSearch = (event) => setSearchValue(event.target.value)
   return (
@@ -89,14 +91,26 @@ const MenuLinks = ({ isOpen }) => {
           value={searchValue}
           onChange={handleChangeSearch}
            />
-        <Link href="/LoginPage" as="LoginPage">
+
           <IconButton
+           onClick={()=>{
+            let tokenObject;
+            if (typeof window !== 'undefined') {
+              tokenObject = JSON.parse(localStorage.getItem("token"));
+            }
+          if(tokenObject){
+            router.push("/Profile")
+          } 
+          else{
+            router.push("/LoginPage")
+          } 
+          }}
               variant="ghost  "
               aria-label="accountIcon"
               fontSize="20px"
               icon={<RiAccountCircleLine />}
           />
-          </Link>
+
         <Link href="/ProductCartPage" as="ProductsCartPage">
           <IconButton
               variant="ghost"
