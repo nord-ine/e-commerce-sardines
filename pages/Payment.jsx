@@ -4,7 +4,8 @@ import PathnameDiv from '../components/PathnameDiv/PathnameDiv'
 import PaymentForm from '../components/PaymentForm/PaymentForm'
 import ControlledInput from '../components/ControlledInput/ControlledInput'
 import OrderRecap from '../components/OrderRecap/OrderRecap'
-
+import {useContext,useEffect,useState} from 'react';
+import ProductsContext from '../Functions/ProductsContext';
 import styles from '../styles/Payment.module.css'
 
 class Payment extends React.Component{
@@ -58,7 +59,7 @@ class Payment extends React.Component{
 
         return (
             <div style={{width:"100%",overflow:"hidden"}}>
-                <PathnameDiv pathname={["Accueil","Panier","Paiement"]}></PathnameDiv>
+                {/* <PathnameDiv pathname={["Accueil","Panier","Paiement"]}></PathnameDiv> */}
                 <div className={styles.detailsDiv}>
                     <form onSubmit={this.handleSubmit}>
                         <div className={styles.userDiv}>
@@ -68,7 +69,7 @@ class Payment extends React.Component{
                                         <p style={{fontWeight:"bold",paddingLeft:"1em"}}> Profil </p>
                                     </td>
                                     <td colSpan={1} style={{width:"50%",boxSizing:"border-box",padding:"1em"}}>
-                                        <a style={{float:"right",paddingLeft:"1em"}} href="LoginPage"> Vous avez déjà une compte ?</a>
+                                        {/* <a style={{float:"right",paddingLeft:"1em"}} href="LoginPage"> Vous avez déjà une compte ?</a> */}
                                     </td>
                                 </tr>
                                 <tr className={styles.detailsRows}>
@@ -117,7 +118,7 @@ class Payment extends React.Component{
                     </form>
                 </div>
                 <div className={styles.orderDiv}>
-                    <OrderRecap></OrderRecap>
+                    {/* <OrderRecap></OrderRecap> */}
                 </div>
             </div>
         )

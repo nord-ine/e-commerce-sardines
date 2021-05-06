@@ -5,6 +5,7 @@ import { Center, Heading, VStack,Button,Stat,
     StatArrow,
     StatGroup } from '@chakra-ui/react';
 import React from 'react'
+import { useRouter } from 'next/router';
 
 import {useContext,useEffect,useState} from 'react';
 import ProductsContext from '../Functions/ProductsContext';
@@ -14,6 +15,7 @@ import ProductItem from '../components/ProductItem/ProductItem'
 const ProductCartPage = () => {
 
     const {productsList,setProductList} = useContext(ProductsContext);
+    const router = useRouter()
 
     const [total, setTotal] = useState(0)
     useEffect(() => {
@@ -31,7 +33,7 @@ const ProductCartPage = () => {
     }
 
     function validateCart(){
-
+        router.push('/Payment');
     }
 
     return (
