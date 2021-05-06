@@ -45,7 +45,7 @@ const ProductItem = ({product}) => {
                     </NumberInputStepper>
                 </NumberInput>
                 <Tag size="lg" variant="subtle" colorScheme="teal">
-                    <TagLabel>{product.quantity} * {product.price}$</TagLabel>
+                    <TagLabel>{product.quantity} × {product.price}$</TagLabel>
                 </Tag>
                 <Button onClick={ondeleteButtonClick} leftIcon={<AiFillDelete />} colorScheme="teal" variant="solid">supprimer</Button>
             </HStack>
