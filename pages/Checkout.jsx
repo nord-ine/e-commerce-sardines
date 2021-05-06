@@ -5,7 +5,6 @@ import { Center,VStack,Heading,Text,Input, FormControl,Button,
     HStack,} from "@chakra-ui/react"
 
 import {FiLogIn} from 'react-icons/fi'
-import React from 'react'
 import { useForm } from "react-hook-form";
 import { gql, useMutation } from '@apollo/client';
 import { useRouter } from 'next/router';
